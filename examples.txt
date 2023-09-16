@@ -1,0 +1,23 @@
+Test One
+testone@testing.com
+0400000001
+Customer One
+
+
+
+--
+Functions of SCRT
+
+User Management (Who can do what on the CRM)
+
+Add Customers
+
+View Customers >  Click on Customer > View Orders/Services/Subscriptions / Payment History /
+Ability to view and add Notes to the account / Customer details and ability to edit them / Contact Customer /
+a log viewable to see what user has made changes / done what on the Customer profile
+
+Reporting page to view amount of services, type of services, and a graph showing amount of services including type from
+selected date period, which is able to be exported to a excel sheet
+
+test_user = User(username='owner', password='secrtowner', role='admin')
+        db.session.add(owner_user)

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>User Management</h1>
+
+    <!-- Form for adding a new user -->
+    <h2>Add New User</h2>
+    <form action="{{ url_for('add_user') }}" method="post">
+        <label for="new_username">Username:</label>
+        <input type="text" id="new_username" name="new_username" required>
+        <br>
+        <label for="new_password">Password:</label>
+        <input type="password" id="new_password" name="new_password" required>
+        <br>
+        <label for="new_role">Role:</label>
+        <select id="new_role" name="new_role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <br>
+        <button type="submit">Add User</button>
+    </form>
+
+    <!-- Form for removing an existing user -->
+    <h2>Remove User</h2>
+    <form action="{{ url_for('remove_user') }}" method="post">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        <br>
+        <button type="submit">Remove User</button>
+    </form>
+
+    <!-- List all users (for the admin to view) -->
+    <h2>All Users</h2>
+    <ul>
+        {% for user in User.query.all() %}
+            <li>ID: {{ user.id }}, Username: {{ user.username }}, Role: {{ user.role }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

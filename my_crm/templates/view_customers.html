@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRM - Customer List</title>
+</head>
+<body>
+    <h1>Customer List</h1>
+
+    <!-- Display Customer List -->
+    <ul>
+        {% for customer in customers %}
+            <li>
+                <strong>Name:</strong> {{ customer.name }} <br>
+                <strong>Email:</strong> {{ customer.email }} <br>
+                <strong>Phone:</strong> {{ customer.phone }} <br>
+                <strong>Notes:</strong> {{ customer.notes }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('welcome') }}">Back to Welcome Page</a>
+</body>
+</html>
