@@ -33,7 +33,7 @@
     <!-- List all users (for the admin to view) -->
     <h2>All Users</h2>
     <ul>
-        {% for user in User.query.all() %}
+        {% for user in all_users %}
             <li>ID: {{ user.id }}, Username: {{ user.username }}, Role: {{ user.role }}</li>
         {% endfor %}
     </ul>
